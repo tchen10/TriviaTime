@@ -10,8 +10,19 @@
 
         <h1>Trivia Time!</h1>
 
-        Enter Your Name: <input type="text" ng-model="userName"/>
-        <h3>Welcome {{userName}}!</h3>
+        <div ng-controller="QuestionListCtrl">
+            <ul>
+                <li ng-repeat="question in questions">
+                    <div>
+                        <h4>{{question.question}}</h4>
+                        <div><input type="radio" name="{{question.id}}-answer" value="1" />{{question.option1}}</div>
+                        <div><input type="radio" name="{{question.id}}-answer" value="2" />{{question.option2}}</div>
+                        <div><input type="radio" name="{{question.id}}-answer" value="3" />{{question.option3}}</div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
 
     </body>
 </html>
